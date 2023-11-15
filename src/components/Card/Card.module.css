@@ -1,5 +1,8 @@
 .card {
   display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
 }
 
 .card img {
@@ -7,9 +10,28 @@
   border-radius: 8px;
 }
 
-.card img:hover {
+.card:hover {
   transform: scale(1.15);
   transition: 1s;
   border-radius: 16px;
   box-shadow: 0 0 10px #222;
+}
+
+.card .icon {
+  background-color: #00000050;
+  width: 25px;
+  height: 25px;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+.icon:hover {
+  cursor: pointer;
+  background-color: #000000;
 }

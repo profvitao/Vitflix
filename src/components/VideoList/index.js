@@ -12,7 +12,7 @@ function VideoList({ videos, emptyHeading }) {
       <h1>{heading}</h1>
       <section className={styles.videoList}>
         {videos.map((video) => (
-          <Card idVideo={video.id} key={video.id} />
+          <Card id={video.id} key={video.id} />
         ))}
       </section>
     </>

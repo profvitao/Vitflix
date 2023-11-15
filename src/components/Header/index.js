@@ -4,12 +4,13 @@ function Header() {
   return (
     <header className={styles.header}>
       <Link to="/">
-        <span>NetFlix</span>
+        <span>VitFlix</span>
       </Link>
       <nav>
         <Link to="/">Home</Link>
         <Link to="/search">Buscar</Link>
-        <Link to="/watch">Assitir</Link>
+        <Link to="/favourites">Favoritos</Link>
+        <Link to="/cadastre">Cadastrar</Link>
       </nav>
     </header>
   );

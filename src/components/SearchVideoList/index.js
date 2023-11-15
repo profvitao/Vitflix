@@ -1,6 +1,7 @@
 import VideoList from "../VideoList";
 import styles from "./SearchVideoList.module.css";
-import { useState } from "react";
+import Loader from "../../components/Loader";
+import { useEffect, useState } from "react";
 
 function filterVideos(videos, searchText) {
   return videos.filter(
@@ -12,6 +13,13 @@ function SearchVideoList({ videos }) {
   const [searchText, setSearchText] = useState("a");
   const foundVideos = filterVideos(videos, searchText);
 
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+  }, []);
+
   return (
     <>
       <section className={styles.container}>
@@ -20,10 +28,15 @@ function SearchVideoList({ videos }) {
           type="search"
           placeholder="Pesquisar.."
         />
-        <VideoList
-          videos={foundVideos}
-          emptyHeading={`Sem videos sobre '${searchText}'`}
-        />
+
+        {loading ? (
+          <Loader />
+        ) : (
+          <VideoList
+            videos={foundVideos}
+            emptyHeading={`Sem videos sobre '${searchText}'`}
+          />
+        )}
       </section>
     </>
   );
