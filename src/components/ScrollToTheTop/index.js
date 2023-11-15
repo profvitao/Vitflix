@@ -1,4 +1,4 @@
-import "./button.css";
+import styles from "./ScrollToTheTop.module.css";
 
 function ScrollToTheTop() {
   const handleClick = () => {
@@ -8,7 +8,11 @@ function ScrollToTheTop() {
     });
   };
 
-  return <button onClick={handleClick}>&#9650;</button>;
+  return (
+    <button className={styles.button} onClick={handleClick}>
+      &#9650;
+    </button>
+  );
 }
 
 export default ScrollToTheTop;
